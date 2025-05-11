@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags de SEO Otimizadas -->
+    <meta name="description"
+        content="Gere comandos Git em português através de descrições simples! Obtenha comandos prontos com explicações claras para iniciantes e avançados. Automatize seu fluxo de versionamento com o GitHelp.">
+    <meta name="keywords"
+        content="comandos Git, assistente Git, Git em português, tutorial Git, versionamento de código, controle de versão, GitHub, GitLab, Git para iniciantes, aprender Git, dicas Git, GitHelp, gerador de comandos Git, desenvolvimento de software, programação">
+    <meta name="author" content="Gabriel Inojoza">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>GitHelp - Seu assistente de comandos Git</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-4">
+                    <div class="bg-gray-100 p-2 rounded-full flex items-center justify-center shadow-inner">
+                        <!-- Substituição pelo logo -->
+                        <img src="img/logo.png" alt="Logo GitHelp" class="w-10 h-10 object-contain">
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-3xl md:text-3xl font-bold text-gray-900 tracking-tight">
+                            GitHelp
+                        </h1>
+                        <p class="text-xs text-gray-600 mt-2 tracking-wide">
+                            Comandos Git simplificados • Aprenda rápido
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Version Badge -->
+                <div class="hidden md:flex items-center">
+                    <div
+                        class="bg-gray-100 px-5 py-2 rounded-full text-sm text-gray-700 transition-all hover:bg-gray-200">
+                        <i class="fas fa-info-circle mr-2 text-gray-600"></i>
+                        <span class="font-medium">Versão 2.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-6xl flex-grow relative">
+        <!-- Hero Section with modern curved design -->
+        <section class="mb-12">
+            <div class="relative overflow-hidden rounded-2xl p-6 md:p-10 lg:p-12 text-white shadow-xl"
+                style="background: linear-gradient(135deg, #f56e42 0%, #e05a33 100%);">
+
+                <!-- Ícone Git ajustado -->
+                <div
+                    class="absolute right-4 md:right-8 top-4 md:top-8 opacity-[0.12] text-white text-5xl md:text-8xl xl:text-[110px] pointer-events-none select-none">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+
+                <!-- Conteúdo principal -->
+                <div class="relative max-w-3xl pr-[20%] md:pr-[15%]">
+                    <h2
+                        class="text-2xl md:text-3xl lg:text-[2.2rem] font-bold mb-4 md:mb-6 leading-snug tracking-tight text-left">
+                        Domine o Git de Forma Natural
+                    </h2>
+
+                    <p
+                        class="text-sm md:text-base lg:text-lg mb-6 md:mb-8 opacity-95 leading-relaxed tracking-normal text-left">
+                        Escreva em português o que precisa fazer e receba o comando ideal com explicações claras e
+                        diretas.
+                    </p>
+
+                    <!-- Destaque final -->
+                    <div
+                        class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 text-left">
+                        <div class="h-2.5 w-2.5 bg-emerald-400 rounded-full animate-pulse flex-shrink-0"></div>
+                        <span class="font-medium text-xs md:text-sm lg:text-base tracking-wide">
+                            Transforme dúvidas em domínio — domine o Git com facilidade.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - Input Section -->
+            <section class="bg-white rounded-2xl shadow-lg p-6 mb-8 lg:col-span-2 border border-gray-100 card">
+                <form id="commandForm" class="mb-6">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="userInput"
+                            class="w-full p-5 pl-12 pr-16 rounded-xl border border-gray-200 focus:outline-none search-glow text-gray-700 placeholder-gray-400 text-lg shadow-sm"
+                            placeholder="Ex: 'quero mandar tudo pro GitHub' ou 'desfazer commit'..." autocomplete="off">
+                        <button type="submit"
+                            class="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary p-3 rounded-lg hover:bg-orange-600 transition pulse-button">
+                            <i class="fas fa-terminal"></i>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center mt-3 px-2">
+                        <p class="text-xs text-gray-500 flex items-center">
+                            <i class="fas fa-lightbulb text-amber-400 mr-2"></i>
+                            Descreva sua tarefa em português simples
+                        </p>
+                        <!-- <div class="text-xs flex items-center text-gray-500">
+                            <i class="fas fa-magic mr-1"></i> Powered by GitHelp AI
+                        </div> -->
+                    </div>
+                </form>
+
+                <!-- Categories and Tags Section -->
+                <div class="mb-6">
+                    <h3 class="text-md font-semibold text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-folder" style="color: var(--primary); margin-right: 0.5rem;"></i> Categorias:
+                    </h3>
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <button class="tag-pill px-4 py-2" style="background-color: var(--primary); color: white;"
+                            data-category="basics">
+                            <i class="fas fa-star mr-2"></i> Básicos
+                        </button>
+                        <button
+                            class="tag-pill px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 transition flex items-center"
+                            data-category="branching">
+                            <i class="fas fa-code-branch mr-2 text-gray-500"></i> Branches
+                        </button>
+                        <button
+                            class="tag-pill px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 transition flex items-center"
+                            data-category="remote">
+                            <i class="fas fa-cloud mr-2 text-gray-500"></i> Remoto
+                        </button>
+                        <button
+                            class="tag-pill px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 transition flex items-center"
+                            data-category="undoing">
+                            <i class="fas fa-undo mr-2 text-gray-500"></i> Desfazer
+                        </button>
+                        <button
+                            class="tag-pill px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 transition flex items-center"
+                            data-category="advanced">
+                            <i class="fas fa-cogs mr-2 text-gray-500"></i> Avançado
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Command Tags by Category -->
+                <div id="commandTags" class="mb-6 bg-gray-50 p-4 rounded-xl">
+                    <div class="flex flex-wrap gap-2" id="tagsContainer">
+                        <!-- Tags will be dynamically loaded here -->
+                    </div>
+                </div>
+
+                <!-- Results Section (Hidden initially) -->
+                <section id="resultSection" class="rounded-xl p-6 mb-4 hidden animate-in"
+                    style="background-color: var(--accent);">
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold mb-0 flex items-center"
+                                style="color: var(--primary-dark);">
+                                <i class="fas fa-terminal mr-2" style="color: var(--primary);"></i> Comando sugerido:
+                            </h3>
+                            <div class="badge">
+                                <i class="fas fa-check-circle mr-1"></i> Verificado
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm command-card">
+                            <div class="flex justify-between items-center gap-4">
+                                <pre id="commandResult" class="command-result whitespace-pre-wrap break-words flex-grow"
+                                    style="color: var(--primary-dark);"></pre>
+                                <button id="copyButton"
+                                    class="text-gray-400 hover:text-orange-600 transition tooltip flex-shrink-0 text-xl">
+                                    <i class="far fa-copy"></i>
+                                    <span class="tooltiptext">Copiar comando</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-md font-medium mb-3 flex items-center" style="color: var(--primary-dark);">
+                            <i class="fas fa-info-circle mr-2" style="color: var(--primary);"></i> Explicação:
+                        </h4>
+                        <p id="commandExplanation" class="text-gray-700 bg-white p-5 rounded-xl shadow-sm"></p>
+
+                        <div class="border-t border-orange-200 pt-5 mt-6">
+                            <p class="text-sm mb-3" style="color: var(--primary-dark);">Este comando resolveu seu
+                                problema?</p>
+                            <div class="flex gap-3">
+                                <button id="feedbackYes"
+                                    class="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition flex items-center">
+                                    <i class="fas fa-thumbs-up mr-2"></i> Sim, funcionou!
+                                </button>
+                                <button id="feedbackNo"
+                                    class="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition flex items-center">
+                                    <i class="fas fa-thumbs-down mr-2"></i> Não resolveu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loading spinner (hidden initially) -->
+                <div id="loadingSection" class="hidden">
+                    <div class="flex items-center justify-center py-16">
+                        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4"
+                            style="border-color: var(--primary);"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column - History and Quick Reference -->
+            <section class="space-y-6">
+                <!-- History Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 card">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="fas fa-history mr-2" style="color: var(--primary);"></i> Histórico Recente
+                    </h3>
+                    <div id="historyList" class="space-y-3 max-h-80 overflow-y-auto pr-2">
+                        <!-- History items will be added here dynamically -->
+                        <div class="text-gray-500 text-sm italic text-center py-6 flex flex-col items-center">
+                            <i class="fas fa-history text-gray-300 text-4xl mb-2"></i>
+                            Seu histórico aparecerá aqui
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold text-gray-700 flex items-center">
+                            <i class="fas fa-book mr-2" style="color: var(--primary);"></i> Referência Rápida
+                        </h3>
+                        <span class="badge">Populares</span>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="quick-ref-item">
+                            <div class="font-medium text-gray-700 mb-1">Ciclo básico:</div>
+                            <code
+                                class="bg-gray-100 px-2 py-1 rounded text-orange-600 block mt-1 text-xs">git add . → git commit -m "msg" → git push</code>
+                        </div>
+                        <div class="quick-ref-item">
+                            <div class="font-medium text-gray-700 mb-1">Verificar status:</div>
+                            <code
+                                class="bg-gray-100 px-2 py-1 rounded text-orange-600 block mt-1 text-xs">git status</code>
+                        </div>
+                        <div class="quick-ref-item">
+                            <div class="font-medium text-gray-700 mb-1">Ver histórico:</div>
+                            <code
+                                class="bg-gray-100 px-2 py-1 rounded text-orange-600 block mt-1 text-xs">git log --oneline</code>
+                        </div>
+                        <div class="quick-ref-item">
+                            <div class="font-medium text-gray-700 mb-1">Desfazer último commit:</div>
+                            <code
+                                class="bg-gray-100 px-2 py-1 rounded text-orange-600 block mt-1 text-xs">git reset --soft HEAD~1</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Card -->
+                <div class="rounded-2xl shadow-lg p-6 text-white card"
+                    style="background: linear-gradient(135deg, #FF8A65 0%, #FF5722 100%);">
+                    <h3 class="text-lg font-semibold mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i> Dica do dia
+                    </h3>
+                    <p class="text-sm mb-4">
+                        Aliases do Git podem economizar muito tempo! Configure no seu <code
+                            class="bg-white bg-opacity-20 px-2 py-0.5 rounded">~/.gitconfig</code>:
+                    </p>
+                    <div class="bg-white bg-opacity-20 rounded-xl p-4 text-xs backdrop-blur-sm">
+                        <code>git config --global alias.co checkout</code><br>
+                        <code>git config --global alias.br branch</code><br>
+                        <code>git config --global alias.st status</code>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 card">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-question-circle mr-2" style="color: var(--primary);"></i> Como usar
+                    </h3>
+                    <ol class="text-sm text-gray-600 space-y-2 list-decimal pl-5">
+                        <li>Digite na caixa de pesquisa o que deseja fazer com Git</li>
+                        <li>Pressione Enter ou clique no botão de pesquisa</li>
+                        <li>Copie o comando sugerido e use no seu terminal</li>
+                        <li>Dê feedback se o comando funcionou ou não</li>
+                    </ol>
+                    <div class="mt-4 p-3 bg-orange-50 rounded-lg text-sm" style="color: var(--primary-dark);">
+                        <i class="fas fa-info-circle mr-2"></i> Quanto mais específico você for na sua pergunta, melhor
+                        será a resposta!
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--dark);" class="text-white py-10 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <!-- Container da Logo -->
+                        <div class="bg-white p-2 rounded-full mr-3 shadow-inner">
+                            <img src="img/logo.png" alt="Logo GitHelp" class="w-8 h-8 object-contain">
+                        </div>
+                        <h2 class="text-xl font-bold">GitHelp</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2">Simplificando seus comandos Git desde 2025</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Inojoza28" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabrielinojoza/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dev_inojoza_/" target="_blank"
+                        class="text-gray-400 hover:text-orange-400 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center">
+                <p class="text-sm text-gray-400">
+                    GitHelp v2.0 | Desenvolvido com ❤️ para simplificar o Git
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
