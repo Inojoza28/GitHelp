@@ -826,9 +826,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn('LocalStorage não está disponível. O histórico não será salvo.');
         }
         
-        // Foco no campo de entrada para melhor experiência do usuário
-        domElements.input.focus();
-        
         // Adicionar classe CSS para animações
         document.body.classList.add('js-loaded');
     }
