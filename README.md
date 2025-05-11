@@ -95,10 +95,6 @@ O GitHelp possui uma extensa base de comandos com mais de 50 operações mapeada
   - Semântica HTML5
 
 
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
 ## ✉️ Contato
 
 **Gabriel Inojoza**  
