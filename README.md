@@ -45,6 +45,7 @@
 ## 🛠️ Tecnologias Utilizadas
 
 - **Frontend**:
+  
  ![Tecnologias](https://skillicons.dev/icons?i=html,tailwind,js)
 
 - **Recursos**:
