@@ -626,30 +626,34 @@ function showFeedbackResponse(wasHelpful) {
     }
 
     const feedbackContainer = domElements.feedbackYes.parentElement.parentElement;
-    const originalContent = feedbackContainer.innerHTML; // Salva o conteúdo original
+    
+    // Armazenar o conteúdo HTML original antes de substituir
+    if (!feedbackContainer.dataset.originalHtml) {
+        feedbackContainer.dataset.originalHtml = feedbackContainer.innerHTML;
+    }
+    
+    // Substituir o conteúdo
     feedbackContainer.innerHTML = '';
     feedbackContainer.appendChild(feedbackDiv);
 
     // Restaura o formulário de feedback original após 5 segundos
     setTimeout(() => {
-        feedbackContainer.innerHTML = originalContent;
+        // Restaurar o HTML original do container de feedback
+        feedbackContainer.innerHTML = feedbackContainer.dataset.originalHtml;
         
-        // Reconecta os event listeners nos novos botões
-        const newFeedbackYes = document.getElementById('feedbackYes');
-        const newFeedbackNo = document.getElementById('feedbackNo');
+        // Atualizar as referências dos elementos nos domElements
+        domElements.feedbackYes = document.getElementById('feedbackYes');
+        domElements.feedbackNo = document.getElementById('feedbackNo');
         
-        if (newFeedbackYes) {
-            newFeedbackYes.addEventListener('click', function() {
-                showFeedbackResponse(true);
-            });
-        }
+        // Reconectar event listeners
+        domElements.feedbackYes.addEventListener('click', function() {
+            showFeedbackResponse(true);
+        });
         
-        if (newFeedbackNo) {
-            newFeedbackNo.addEventListener('click', function() {
-                showFeedbackResponse(false);
-            });
-        }
-    }, 5000); // 5 segundos
+        domElements.feedbackNo.addEventListener('click', function() {
+            showFeedbackResponse(false);
+        });
+    }, 6000); // 5 segundos
 }
 
     /**
