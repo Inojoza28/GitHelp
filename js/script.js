@@ -609,22 +609,48 @@ document.addEventListener('DOMContentLoaded', function () {
      * Exibe resposta de feedback ao usuário
      * @param {boolean} wasHelpful - Se o comando foi útil ou não
      */
-    function showFeedbackResponse(wasHelpful) {
-        const feedbackDiv = document.createElement('div');
-        feedbackDiv.className = 'p-3 mt-3 rounded-md animate__animated animate__fadeIn';
+/**
+ * Exibe resposta de feedback ao usuário e restaura após um tempo
+ * @param {boolean} wasHelpful - Se o comando foi útil ou não
+ */
+function showFeedbackResponse(wasHelpful) {
+    const feedbackDiv = document.createElement('div');
+    feedbackDiv.className = 'p-3 mt-3 rounded-md animate__animated animate__fadeIn';
 
-        if (wasHelpful) {
-            feedbackDiv.classList.add('bg-green-100', 'text-green-800');
-            feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Ótimo! Obrigado pelo feedback. Isso nos ajuda a melhorar.';
-        } else {
-            feedbackDiv.classList.add('bg-blue-100', 'text-blue-800');
-            feedbackDiv.innerHTML = '<i class="fas fa-info-circle mr-2"></i> Obrigado! Tente reformular sua pergunta ou use os botões de categorias acima para encontrar o comando desejado.';
-        }
-
-        const feedbackContainer = domElements.feedbackYes.parentElement.parentElement;
-        feedbackContainer.innerHTML = '';
-        feedbackContainer.appendChild(feedbackDiv);
+    if (wasHelpful) {
+        feedbackDiv.classList.add('bg-green-100', 'text-green-800');
+        feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Ótimo! Obrigado pelo feedback. Isso nos ajuda a melhorar.';
+    } else {
+        feedbackDiv.classList.add('bg-blue-100', 'text-blue-800');
+        feedbackDiv.innerHTML = '<i class="fas fa-info-circle mr-2"></i> Obrigado! Tente reformular sua pergunta ou use os botões de categorias acima para encontrar o comando desejado.';
     }
+
+    const feedbackContainer = domElements.feedbackYes.parentElement.parentElement;
+    const originalContent = feedbackContainer.innerHTML; // Salva o conteúdo original
+    feedbackContainer.innerHTML = '';
+    feedbackContainer.appendChild(feedbackDiv);
+
+    // Restaura o formulário de feedback original após 5 segundos
+    setTimeout(() => {
+        feedbackContainer.innerHTML = originalContent;
+        
+        // Reconecta os event listeners nos novos botões
+        const newFeedbackYes = document.getElementById('feedbackYes');
+        const newFeedbackNo = document.getElementById('feedbackNo');
+        
+        if (newFeedbackYes) {
+            newFeedbackYes.addEventListener('click', function() {
+                showFeedbackResponse(true);
+            });
+        }
+        
+        if (newFeedbackNo) {
+            newFeedbackNo.addEventListener('click', function() {
+                showFeedbackResponse(false);
+            });
+        }
+    }, 5000); // 5 segundos
+}
 
     /**
      * Copia texto para a área de transferência
