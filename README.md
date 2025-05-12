@@ -98,7 +98,7 @@ O GitHelp possui uma extensa base de comandos com mais de 50 operações mapeada
 ## ✉️ Contato
 
 **Gabriel Inojoza**  
-- GitHub: [@Inojoza28](https://github.com/Inojoza28)
+- Instagram: [@dev_inojoza_](https://www.instagram.com/dev_inojoza_/)
 - LinkedIn: [gabrielinojoza](https://www.linkedin.com/in/gabrielinojoza/)
 - Email: carlosginojoza@gmail.com
 
