@@ -653,7 +653,7 @@ function showFeedbackResponse(wasHelpful) {
         domElements.feedbackNo.addEventListener('click', function() {
             showFeedbackResponse(false);
         });
-    }, 6000); // 5 segundos
+    }, 6000); // 6 segundos
 }
 
     /**
