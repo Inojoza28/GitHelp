@@ -44,9 +44,9 @@
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Frontend**:
+- **Tecnologias**:
   
- ![Tecnologias](https://skillicons.dev/icons?i=html,tailwind,js)
+ ![Tecnologias](https://skillicons.dev/icons?i=html,css,tailwind,js,git,github,vscode)
 
 - **Recursos**:
   - Sistema de busca inteligente
