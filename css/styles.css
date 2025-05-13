@@ -12,6 +12,10 @@
             --gray: #B0BEC5;
         }
 
+        [data-theme="dark"] body {
+        background-color: var(--bg-main) !important;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #FAFAFA;
