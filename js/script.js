@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function calculateRelevanceScore(normalizedQuery, cmd) {
         let score = 0;
         const queryWords = normalizedQuery.split(/\s+/);
-        
+
         // Verifica correspondência com palavras-chave
         cmd.keywords.forEach(keyword => {
             const normalizedKeyword = keyword.toLowerCase()
@@ -427,23 +427,23 @@ document.addEventListener('DOMContentLoaded', function () {
     function findPartialMatches(queryWords) {
         // Prioriza palavras mais longas, que tendem a ser mais específicas
         queryWords.sort((a, b) => b.length - a.length);
-        
+
         for (const word of queryWords) {
             if (word.length < 3) continue; // Ignora palavras muito curtas
-            
+
             // Procura comandos que tenham essa palavra em suas keywords
             for (const cmd of gitKnowledgeBase.commands) {
                 for (const keyword of cmd.keywords) {
                     const normalizedKeyword = keyword.toLowerCase()
                         .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    
+
                     if (normalizedKeyword.includes(word)) {
                         return cmd;
                     }
                 }
             }
         }
-        
+
         return null;
     }
 
@@ -561,7 +561,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 domElements.commandExplanation.textContent = item.explanation;
                 domElements.resultSection.classList.remove('hidden');
                 domElements.input.value = item.query;
-                
+
                 // Rolar até o resultado
                 domElements.resultSection.scrollIntoView({ behavior: 'smooth' });
             });
@@ -609,52 +609,52 @@ document.addEventListener('DOMContentLoaded', function () {
      * Exibe resposta de feedback ao usuário
      * @param {boolean} wasHelpful - Se o comando foi útil ou não
      */
-/**
- * Exibe resposta de feedback ao usuário e restaura após um tempo
- * @param {boolean} wasHelpful - Se o comando foi útil ou não
- */
-function showFeedbackResponse(wasHelpful) {
-    const feedbackDiv = document.createElement('div');
-    feedbackDiv.className = 'p-3 mt-3 rounded-md animate__animated animate__fadeIn';
+    /**
+     * Exibe resposta de feedback ao usuário e restaura após um tempo
+     * @param {boolean} wasHelpful - Se o comando foi útil ou não
+     */
+    function showFeedbackResponse(wasHelpful) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'p-3 mt-3 rounded-md animate__animated animate__fadeIn';
 
-    if (wasHelpful) {
-        feedbackDiv.classList.add('bg-green-100', 'text-green-800');
-        feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Ótimo! Obrigado pelo feedback. Isso nos ajuda a melhorar.';
-    } else {
-        feedbackDiv.classList.add('bg-blue-100', 'text-blue-800');
-        feedbackDiv.innerHTML = '<i class="fas fa-info-circle mr-2"></i> Obrigado! Tente reformular sua pergunta ou use os botões de categorias acima para encontrar o comando desejado.';
+        if (wasHelpful) {
+            feedbackDiv.classList.add('bg-green-100', 'text-green-800');
+            feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Ótimo! Obrigado pelo feedback. Isso nos ajuda a melhorar.';
+        } else {
+            feedbackDiv.classList.add('bg-blue-100', 'text-blue-800');
+            feedbackDiv.innerHTML = '<i class="fas fa-info-circle mr-2"></i> Obrigado! Tente reformular sua pergunta ou use os botões de categorias acima para encontrar o comando desejado.';
+        }
+
+        const feedbackContainer = domElements.feedbackYes.parentElement.parentElement;
+
+        // Armazenar o conteúdo HTML original antes de substituir
+        if (!feedbackContainer.dataset.originalHtml) {
+            feedbackContainer.dataset.originalHtml = feedbackContainer.innerHTML;
+        }
+
+        // Substituir o conteúdo
+        feedbackContainer.innerHTML = '';
+        feedbackContainer.appendChild(feedbackDiv);
+
+        // Restaura o formulário de feedback original após 5 segundos
+        setTimeout(() => {
+            // Restaurar o HTML original do container de feedback
+            feedbackContainer.innerHTML = feedbackContainer.dataset.originalHtml;
+
+            // Atualizar as referências dos elementos nos domElements
+            domElements.feedbackYes = document.getElementById('feedbackYes');
+            domElements.feedbackNo = document.getElementById('feedbackNo');
+
+            // Reconectar event listeners
+            domElements.feedbackYes.addEventListener('click', function () {
+                showFeedbackResponse(true);
+            });
+
+            domElements.feedbackNo.addEventListener('click', function () {
+                showFeedbackResponse(false);
+            });
+        }, 6000); // 6 segundos
     }
-
-    const feedbackContainer = domElements.feedbackYes.parentElement.parentElement;
-    
-    // Armazenar o conteúdo HTML original antes de substituir
-    if (!feedbackContainer.dataset.originalHtml) {
-        feedbackContainer.dataset.originalHtml = feedbackContainer.innerHTML;
-    }
-    
-    // Substituir o conteúdo
-    feedbackContainer.innerHTML = '';
-    feedbackContainer.appendChild(feedbackDiv);
-
-    // Restaura o formulário de feedback original após 5 segundos
-    setTimeout(() => {
-        // Restaurar o HTML original do container de feedback
-        feedbackContainer.innerHTML = feedbackContainer.dataset.originalHtml;
-        
-        // Atualizar as referências dos elementos nos domElements
-        domElements.feedbackYes = document.getElementById('feedbackYes');
-        domElements.feedbackNo = document.getElementById('feedbackNo');
-        
-        // Reconectar event listeners
-        domElements.feedbackYes.addEventListener('click', function() {
-            showFeedbackResponse(true);
-        });
-        
-        domElements.feedbackNo.addEventListener('click', function() {
-            showFeedbackResponse(false);
-        });
-    }, 6000); // 6 segundos
-}
 
     /**
      * Copia texto para a área de transferência
@@ -675,7 +675,7 @@ function showFeedbackResponse(wasHelpful) {
             document.body.appendChild(textArea);
             textArea.focus();
             textArea.select();
-            
+
             return new Promise((resolve, reject) => {
                 try {
                     const successful = document.execCommand('copy');
@@ -698,12 +698,12 @@ function showFeedbackResponse(wasHelpful) {
      */
     function updateCategoryButtons(activeButton) {
         domElements.categoryButtons.forEach(btn => {
-            btn.classList.remove('bg-red-100', 'text-red-700');
+            btn.classList.remove('bg-red-100', 'text-red-700', 'text-orange-500');
             btn.classList.add('bg-gray-200', 'text-gray-700');
         });
 
         activeButton.classList.remove('bg-gray-200', 'text-gray-700');
-        activeButton.classList.add('bg-red-100', 'text-red-700');
+        activeButton.classList.add('bg-red-100', 'text-orange-500');
     }
 
     /**
@@ -754,7 +754,7 @@ function showFeedbackResponse(wasHelpful) {
                 // Esconder loading, mostrar resultado
                 domElements.loadingSection.classList.add('hidden');
                 domElements.resultSection.classList.remove('hidden');
-                
+
                 // Tornar o resultado visível na tela
                 domElements.resultSection.scrollIntoView({ behavior: 'smooth' });
             } catch (error) {
@@ -776,13 +776,13 @@ function showFeedbackResponse(wasHelpful) {
     // Funcionalidade do botão de copiar
     domElements.copyButton.addEventListener('click', function () {
         const textToCopy = domElements.commandResult.textContent;
-        
+
         copyToClipboard(textToCopy)
             .then(() => {
                 // Feedback visual para cópia
                 copyButton.innerHTML = '<i class="fas fa-check"></i>';
                 animateHighlight(domElements.commandResult);
-                
+
                 setTimeout(() => {
                     copyButton.innerHTML = '<i class="far fa-copy"></i>';
                 }, 2000);
@@ -803,7 +803,7 @@ function showFeedbackResponse(wasHelpful) {
     });
 
     // Detecção de "Enter" no campo de entrada
-    domElements.input.addEventListener('keypress', function(e) {
+    domElements.input.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             e.preventDefault();
             domElements.form.dispatchEvent(new Event('submit'));
@@ -811,28 +811,28 @@ function showFeedbackResponse(wasHelpful) {
     });
 
     // Sugestões enquanto digita (autocomplete simples)
-    domElements.input.addEventListener('input', function() {
+    domElements.input.addEventListener('input', function () {
         const query = this.value.trim().toLowerCase();
-        
+
         // Só mostrar sugestões se tiver pelo menos 3 caracteres
         if (query.length >= 3) {
             // Encontrar todas as keywords que começam com a consulta atual
             const possibleCommands = gitKnowledgeBase.commands
                 .filter(cmd => {
-                    return cmd.keywords.some(keyword => 
+                    return cmd.keywords.some(keyword =>
                         keyword.toLowerCase()
-                               .normalize("NFD")
-                               .replace(/[\u0300-\u036f]/g, "")
-                               .includes(query.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
+                            .normalize("NFD")
+                            .replace(/[\u0300-\u036f]/g, "")
+                            .includes(query.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
                 })
                 .slice(0, 3); // Limita a 3 sugestões
-            
+
             // TODO: Implementar um dropdown de sugestões se desejar essa funcionalidade
         }
     });
 
     // ===== Inicialização =====
-    
+
     // Verificar se há suporte a localStorage
     function checkLocalStorage() {
         try {
@@ -843,23 +843,23 @@ function showFeedbackResponse(wasHelpful) {
             return false;
         }
     }
-    
+
     // Inicialização do app
     function init() {
         // Carregar tags da categoria básica por padrão
         loadCommandTags('basics');
-        
+
         // Carregar o histórico salvo, se disponível
         if (checkLocalStorage()) {
             loadHistory();
         } else {
             console.warn('LocalStorage não está disponível. O histórico não será salvo.');
         }
-        
+
         // Adicionar classe CSS para animações
         document.body.classList.add('js-loaded');
     }
-    
+
     // Iniciar o aplicativo
     init();
 });
