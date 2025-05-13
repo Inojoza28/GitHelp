@@ -10,7 +10,7 @@
   --bg-card: #1e2837;
   --border: #3a4556;
   --command-bg: #2d3748;
-  --quick-ref-code: #3a4556;
+  --quick-ref-code: #f1f1f10f;
   --code-text: #ff7f50;
   --header-bg: #1a202c;
   --header-text: #f3f4f6;
@@ -90,14 +90,22 @@ body {
 
 /* Sombras */
 [data-theme="dark"] .shadow-lg,
-[data-theme="dark"] .shadow-sm,
 [data-theme="dark"] .shadow {
   box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
 }
 
 /* Componentes específicos */
 [data-theme="dark"] header {
-  background-color: var(--header-bg);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(26, 32, 44, 0.85) 50%,  /* #1a202c com 85% de opacidade */
+    rgba(26, 32, 44, 0.95)       /* 95% de opacidade no final */
+  );
+  box-shadow: 
+    0 6px 18px -4px rgba(var(--shadow-color), 0.25),  /* Sombra mais suave e difusa */
+    0 3px 8px -2px rgba(var(--shadow-color), 0.15),    /* Camada intermediária */
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);       /* Borda sutil na parte inferior */
 }
 
 [data-theme="dark"] header h1 {
@@ -198,7 +206,7 @@ body {
 }
 
 [data-theme="dark"] #themeIcon {
-  color: var(--primary);
+  color: #aeaeae ; 
   transition: transform 0.3s ease;
 }
 
