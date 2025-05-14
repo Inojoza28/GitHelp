@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 8
             },
             {
-                keywords: ['stash', 'guardar temporariamente', 'salvar para depois', 'armazenar alterações'],
+                keywords: ['stash', 'salvar para depois', 'armazenar alterações','guardar alterações temporariamente','guardar temporariamente','stash alterações', 'salvar sem commit', 'guardar com stash'],
                 command: 'git stash',
                 explanation: 'Salva temporariamente as alterações que ainda não foram commitadas para poder mudar de branch sem perder o trabalho. As alterações são removidas do diretório de trabalho até serem restauradas.',
                 category: 'advanced',
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 6
             },
             {
-                keywords: ['reflog', 'histórico de referências', 'recuperar branch deletada', 'histórico de operações'],
+                keywords: ['reflog', 'histórico de referências', 'recuperar branch deletada', 'histórico de operações', 'ver reflog', 'referências de commits', 'histórico interno', 'registro de HEAD'],
                 command: 'git reflog',
                 explanation: 'Mostra um log de todas as referências de HEAD, útil para recuperar commits ou branches perdidos. O reflog mantém um histórico de onde seu HEAD e branches estavam nos últimos 30 dias.',
                 category: 'advanced',
@@ -269,20 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 explanation: 'Configura seu nome de usuário global para commits. Use git config --global user.email "seu@email.com" para configurar seu email.',
                 category: 'basics',
                 importance: 8
-            },
-            {
-                keywords: ['reflog', 'ver reflog', 'referências de commits', 'histórico interno', 'registro de HEAD'],
-                command: 'git reflog',
-                explanation: 'Mostra o histórico de onde o HEAD e as referências apontaram. É útil para recuperar commits "perdidos" que não aparecem no git log, como commits excluídos ou branches deletadas.',
-                category: 'advanced',
-                importance: 7
-            },
-            {
-                keywords: ['guardar alterações temporariamente','guardar temporariamente','salvar para depois', 'stash', 'stash alterações', 'salvar sem commit', 'guardar com stash'],
-                command: 'git stash',
-                explanation: 'Guarda temporariamente as alterações do diretório de trabalho que ainda não foram commitadas, permitindo trocar de branch sem perder progresso.',
-                category: 'advanced',
-                importance: 6
             }
         ],
 
