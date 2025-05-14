@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 8
             },
             {
-                keywords: ['stash', 'salvar para depois', 'armazenar alterações','guardar alterações temporariamente','guardar temporariamente','stash alterações', 'salvar sem commit', 'guardar com stash'],
+                keywords: ['stash', 'salvar para depois', 'armazenar alterações', 'guardar alterações temporariamente', 'guardar temporariamente', 'stash alterações', 'salvar sem commit', 'guardar com stash'],
                 command: 'git stash',
                 explanation: 'Salva temporariamente as alterações que ainda não foram commitadas para poder mudar de branch sem perder o trabalho. As alterações são removidas do diretório de trabalho até serem restauradas.',
                 category: 'advanced',
@@ -269,6 +269,104 @@ document.addEventListener('DOMContentLoaded', function () {
                 explanation: 'Configura seu nome de usuário global para commits. Use git config --global user.email "seu@email.com" para configurar seu email.',
                 category: 'basics',
                 importance: 8
+            },
+            {
+                keywords: ['limpar', 'remover não rastreados', 'clean', 'arquivos não rastreados', 'limpar diretório'],
+                command: 'git clean -fd',
+                explanation: 'Remove arquivos e diretórios não rastreados do diretório de trabalho. A opção "-f" força a remoção e "-d" inclui diretórios não rastreados. CUIDADO: Este comando remove permanentemente arquivos que não foram adicionados ao Git.',
+                category: 'undoing',
+                importance: 7
+            },
+            {
+                keywords: ['show', 'ver commit', 'detalhes do commit', 'mostrar commit', 'exibir commit'],
+                command: 'git show [hash-do-commit]',
+                explanation: 'Mostra informações detalhadas sobre um commit específico, incluindo o diff completo. Se nenhum hash for especificado, mostra informações sobre o commit mais recente (HEAD).',
+                category: 'basics',
+                importance: 7
+            },
+            {
+                keywords: ['reset hard', 'resetar tudo', 'limpar completamente', 'voltar para commit', 'reset completo'],
+                command: 'git reset --hard [hash-do-commit]',
+                explanation: 'Redefine o estado do repositório para um commit específico, descartando todas as alterações posteriores. CUIDADO: Este comando causa perda permanente de trabalho não commitado.',
+                category: 'undoing',
+                importance: 7
+            },
+            {
+                keywords: ['revert', 'reverter commit', 'desfazer com commit', 'anular commit'],
+                command: 'git revert [hash-do-commit]',
+                explanation: 'Cria um novo commit que desfaz todas as alterações feitas no commit especificado. Ao contrário de reset, este comando preserva o histórico, criando um novo commit que "desfaz" as alterações em vez de removê-las do histórico.',
+                category: 'undoing',
+                importance: 8
+            },
+            {
+                keywords: ['shortlog', 'resumo por autor', 'estatísticas de commit', 'commits por pessoa'],
+                command: 'git shortlog -sn',
+                explanation: 'Resumo do log de commits agrupados por autor. A opção "-s" mostra apenas o número de commits e "-n" ordena pelo número de commits (maior para menor). Útil para visualizar quem contribuiu mais para o projeto.',
+                category: 'advanced',
+                importance: 5
+            },
+            {
+                keywords: ['bisect', 'encontrar bug', 'busca binária', 'localizar problema'],
+                command: 'git bisect start',
+                explanation: 'Inicia uma busca binária para encontrar o commit que introduziu um bug. Após iniciar, você marca commits como "bons" (git bisect good) ou "ruins" (git bisect bad), e o Git navega automaticamente pelo histórico para ajudar a encontrar o commit problemático.',
+                category: 'advanced',
+                importance: 6
+            },
+            {
+                keywords: ['listar arquivos', 'ls-files', 'ver arquivos rastreados', 'arquivos no índice'],
+                command: 'git ls-files',
+                explanation: 'Lista todos os arquivos rastreados pelo Git no diretório atual. Pode ser usado com opções como "--stage" para mostrar informações detalhadas do índice ou "-o" para mostrar arquivos não rastreados.',
+                category: 'basics',
+                importance: 5
+            },
+            {
+                keywords: ['archive', 'criar arquivo', 'exportar', 'zip', 'tar'],
+                command: 'git archive --format=zip HEAD > arquivo.zip',
+                explanation: 'Cria um arquivo (zip, tar, etc.) contendo todos os arquivos na versão HEAD (ou em qualquer commit especificado). Útil para exportar uma cópia limpa do projeto sem o diretório .git.',
+                category: 'advanced',
+                importance: 5
+            },
+            {
+                keywords: ['worktree', 'múltiplos diretórios', 'adicionar diretório de trabalho'],
+                command: 'git worktree add ../pasta-nova branch-nome',
+                explanation: 'Cria um novo diretório de trabalho associado ao mesmo repositório, mas em uma branch diferente. Permite trabalhar em múltiplas branches simultaneamente sem precisar alternar entre elas.',
+                category: 'advanced',
+                importance: 6
+            },
+            {
+                keywords: ['submodule', 'submódulo', 'adicionar repositório dentro de outro', 'dependência git'],
+                command: 'git submodule add [url-repositório] [caminho]',
+                explanation: 'Adiciona um subrepositório dentro do repositório atual. Útil para incorporar código de outros projetos mantendo suas histórias separadas. Use "git submodule update --init" para inicializar submódulos após clonar um repositório que os contém.',
+                category: 'advanced',
+                importance: 7
+            },
+            {
+                keywords: ['filter-branch', 'reescrever histórico', 'limpar histórico', 'editar histórico completo'],
+                command: 'git filter-branch --tree-filter "comando" HEAD',
+                explanation: 'Reescreve o histórico de commits usando o filtro especificado. CUIDADO: Este comando altera o histórico de forma irreversível e deve ser usado com extrema cautela, especialmente em repositórios compartilhados.',
+                category: 'advanced',
+                importance: 4
+            },
+            {
+                keywords: ['gc', 'garbage collect', 'limpar repositório', 'otimizar', 'compactar repositório'],
+                command: 'git gc',
+                explanation: 'Executa coleta de lixo no repositório, removendo arquivos desnecessários e otimizando o repositório local. Útil para melhorar o desempenho após muitas operações ou em repositórios grandes.',
+                category: 'advanced',
+                importance: 5
+            },
+            {
+                keywords: ['rev-parse', 'metadata', 'informações sobre commit', 'identificador completo'],
+                command: 'git rev-parse HEAD',
+                explanation: 'Mostra o hash completo do commit atual (HEAD) ou de qualquer revisão especificada. Útil em scripts para obter identificadores precisos de commits ou branches.',
+                category: 'advanced',
+                importance: 4
+            },
+            {
+                keywords: ['difftool', 'mergetool', 'ferramenta de diff', 'ferramenta de merge', 'configurar ferramentas'],
+                command: 'git difftool',
+                explanation: 'Inicia uma ferramenta de visualização de diferenças externa para comparar alterações. Use "git mergetool" para iniciar uma ferramenta de resolução de conflitos. As ferramentas usadas podem ser configuradas com "git config --global diff.tool [nome-da-ferramenta]".',
+                category: 'advanced',
+                importance: 6
             }
         ],
 
@@ -301,7 +399,8 @@ document.addEventListener('DOMContentLoaded', function () {
             undoing: [
                 { text: 'Desfazer commit', icon: 'fa-undo', query: 'desfazer último commit' },
                 { text: 'Descartar mudanças', icon: 'fa-trash-alt', query: 'descartar alterações não salvas' },
-                { text: 'Corrigir último commit', icon: 'fa-edit', query: 'modificar último commit' }
+                { text: 'Corrigir último commit', icon: 'fa-edit', query: 'modificar último commit' },
+                { text: 'Revert de commits', icon: 'fa-history', query: 'reverter commit com git revert' }
             ],
             advanced: [
                 { text: 'Guardar com stash', icon: 'fa-box', query: 'Guardar mudanças com stash' },
@@ -309,7 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 { text: 'Rebase', icon: 'fa-stream', query: 'rebase com main' },
                 { text: 'Cherry-pick', icon: 'fa-hand-pointer', query: 'aplicar commit específico' },
                 { text: 'Ver reflog', icon: 'fa-clipboard-list', query: 'ver reflog' },
-                { text: 'Log gráfico', icon: 'fa-project-diagram', query: 'ver log gráfico de commits' }
+                { text: 'Log gráfico', icon: 'fa-project-diagram', query: 'ver log gráfico de commits' },
+                { text: 'Buscar bugs com bisect', icon: 'fa-bug', query: 'encontrar bug com bisect' }
             ]
         }
     };
