@@ -269,6 +269,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 explanation: 'Configura seu nome de usuário global para commits. Use git config --global user.email "seu@email.com" para configurar seu email.',
                 category: 'basics',
                 importance: 8
+            },
+            {
+                keywords: ['reflog', 'ver reflog', 'referências de commits', 'histórico interno', 'registro de HEAD'],
+                command: 'git reflog',
+                explanation: 'Mostra o histórico de onde o HEAD e as referências apontaram. É útil para recuperar commits "perdidos" que não aparecem no git log, como commits excluídos ou branches deletadas.',
+                category: 'advanced',
+                importance: 7
+            },
+            {
+                keywords: ['guardar alterações temporariamente','guardar temporariamente','salvar para depois', 'stash', 'stash alterações', 'salvar sem commit', 'guardar com stash'],
+                command: 'git stash',
+                explanation: 'Guarda temporariamente as alterações do diretório de trabalho que ainda não foram commitadas, permitindo trocar de branch sem perder progresso.',
+                category: 'advanced',
+                importance: 6
             }
         ],
 
@@ -304,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { text: 'Corrigir último commit', icon: 'fa-edit', query: 'modificar último commit' }
             ],
             advanced: [
-                { text: 'Guardar com stash', icon: 'fa-box', query: 'salvar mudanças com stash' },
+                { text: 'Guardar com stash', icon: 'fa-box', query: 'Guardar mudanças com stash' },
                 { text: 'Criar tag de versão', icon: 'fa-tag', query: 'criar tag de versão' },
                 { text: 'Rebase', icon: 'fa-stream', query: 'rebase com main' },
                 { text: 'Cherry-pick', icon: 'fa-hand-pointer', query: 'aplicar commit específico' },
