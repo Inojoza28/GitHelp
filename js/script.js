@@ -367,6 +367,69 @@ document.addEventListener('DOMContentLoaded', function () {
                 explanation: 'Inicia uma ferramenta de visualização de diferenças externa para comparar alterações. Use "git mergetool" para iniciar uma ferramenta de resolução de conflitos. As ferramentas usadas podem ser configuradas com "git config --global diff.tool [nome-da-ferramenta]".',
                 category: 'advanced',
                 importance: 6
+            },
+            {
+                keywords: ['switch branch', 'trocar com switch', 'git switch', 'mudar via switch', 'comando moderno branch'],
+                command: 'git switch [nome-da-branch]',
+                explanation: 'Muda para a branch especificada. É uma alternativa mais moderna ao "git checkout" para mudança de branches, introduzida no Git 2.23. A vantagem é ser mais específica, separando as funcionalidades de checkout em comandos distintos.',
+                category: 'branching',
+                importance: 8
+            },
+            {
+                keywords: ['restore arquivo', 'git restore', 'desfazer com restore', 'recuperar com restore', 'descartar usando restore'],
+                command: 'git restore [arquivo]',
+                explanation: 'Restaura arquivos do diretório de trabalho para o estado do índice ou de outro commit. É um comando moderno introduzido no Git 2.23 que substitui parte da funcionalidade do "git checkout" com uma interface mais clara.',
+                category: 'undoing',
+                importance: 7
+            },
+            {
+                keywords: ['amend sem editar mensagem', 'commit --amend --no-edit', 'emendar sem editar', 'corrigir sem mudar mensagem'],
+                command: 'git commit --amend --no-edit',
+                explanation: 'Adiciona as mudanças na área de preparação ao último commit sem alterar sua mensagem. Útil para fazer pequenas correções ou adições ao commit mais recente sem criar um novo commit.',
+                category: 'undoing',
+                importance: 7
+            },
+            {
+                keywords: ['log filtrar autor', 'histórico por autor', 'commits de um autor', 'buscar commits por pessoa'],
+                command: 'git log --author="nome-do-autor"',
+                explanation: 'Filtra o histórico de commits mostrando apenas aqueles feitos por um autor específico. Substitua "nome-do-autor" pelo nome ou email que deseja buscar. Aceita expressões regulares para buscas mais flexíveis.',
+                category: 'basics',
+                importance: 6
+            },
+            {
+                keywords: ['configurar upstream', 'definir branch remota', 'set-upstream primeira vez', 'push com upstream'],
+                command: 'git push --set-upstream origin [nome-da-branch]',
+                explanation: 'Envia a branch atual para o repositório remoto e configura o rastreamento (tracking) entre a branch local e a remota. Após usar este comando uma vez, você pode usar simplesmente "git push" ou "git pull" sem especificar o remoto e a branch.',
+                category: 'remote',
+                importance: 8
+            },
+            {
+                keywords: ['renomear branch', 'mudar nome da branch', 'branch rename', 'alterar nome de branch'],
+                command: 'git branch -m [nome-antigo] [nome-novo]',
+                explanation: 'Renomeia uma branch. Se omitir [nome-antigo], renomeia a branch atual. Para renomear uma branch remota, é necessário renomear localmente, deletar a branch remota antiga e fazer push da nova.',
+                category: 'branching',
+                importance: 6
+            },
+            {
+                keywords: ['definir editor padrão', 'configurar editor global', 'mudar editor git', 'editor para commits'],
+                command: 'git config --global core.editor "editor"',
+                explanation: 'Define o editor de texto padrão usado pelo Git para mensagens de commit e outros textos interativos. Substitua "editor" pelo comando que inicia seu editor preferido, como "vim", "nano", "code --wait" (VS Code), etc.',
+                category: 'basics',
+                importance: 6
+            },
+            {
+                keywords: ['buscar texto em commits', 'procurar mensagem commit', 'grep commit', 'filtrar mensagens por texto'],
+                command: 'git log --grep="padrão"',
+                explanation: 'Busca por commits cujas mensagens contêm o padrão especificado. Substitua "padrão" pelo texto que você deseja encontrar. É útil para localizar commits relacionados a uma feature ou correção específica.',
+                category: 'advanced',
+                importance: 6
+            },
+            {
+                keywords: ['prune remote', 'limpar referências remotas', 'remover branches obsoletas', 'atualizar lista remotas'],
+                command: 'git remote prune origin',
+                explanation: 'Remove referências locais a branches remotas que não existem mais no repositório de origem. Útil após branches terem sido mescladas e excluídas no repositório remoto para manter suas referências locais sincronizadas.',
+                category: 'remote',
+                importance: 6
             }
         ],
 
