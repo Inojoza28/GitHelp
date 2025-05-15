@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 8
             },
             {
-                keywords: ['restore arquivo', 'git restore', 'desfazer com restore', 'recuperar com restore', 'descartar usando restore'],
+                keywords: ['restore arquivo', 'git restore', 'desfazer com restore','restaurar arquivo específico', 'restaurar arquivo', 'recuperar com restore', 'descartar usando restore'],
                 command: 'git restore [arquivo]',
                 explanation: 'Restaura arquivos do diretório de trabalho para o estado do índice ou de outro commit. É um comando moderno introduzido no Git 2.23 que substitui parte da funcionalidade do "git checkout" com uma interface mais clara.',
                 category: 'undoing',
@@ -447,6 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
             branching: [
                 { text: 'Criar branch', icon: 'fa-code-branch', query: 'criar nova branch' },
                 { text: 'Mudar de branch', icon: 'fa-exchange-alt', query: 'mudar para outra branch' },
+                { text: 'Criar e trocar branch', icon: 'fa-plus-circle', query: 'criar e mudar de branch' },
                 { text: 'Listar branches', icon: 'fa-list', query: 'listar todas as branches' },
                 { text: 'Fazer merge', icon: 'fa-object-group', query: 'mesclar branches' },
                 { text: 'Deletar branch', icon: 'fa-trash', query: 'deletar branch' },
@@ -463,7 +464,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 { text: 'Desfazer commit', icon: 'fa-undo', query: 'desfazer último commit' },
                 { text: 'Descartar mudanças', icon: 'fa-trash-alt', query: 'descartar alterações não salvas' },
                 { text: 'Corrigir último commit', icon: 'fa-edit', query: 'modificar último commit' },
-                { text: 'Revert de commits', icon: 'fa-history', query: 'reverter commit com git revert' }
+                { text: 'Revert de commits', icon: 'fa-history', query: 'reverter commit com git revert' },
+                { text: 'Restaurar arquivo', icon: 'fa-file-medical', query: 'restaurar arquivo específico' },
             ],
             advanced: [
                 { text: 'Guardar com stash', icon: 'fa-box', query: 'Guardar mudanças com stash' },
