@@ -307,34 +307,65 @@
     <!-- Footer -->
     <footer style="background-color: var(--dark);" class="text-white py-10 mt-12">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <!-- Container da Logo -->
+            <!-- Primeira linha do footer -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coluna de informações do site -->
+                <div>
+                    <div class="flex items-center mb-4">
                         <div class="bg-white p-2 rounded-full mr-3 shadow-inner">
                             <img src="img/logo-githelp.png" alt="Logo GitHelp" class="w-8 h-8 object-contain">
                         </div>
                         <h2 class="text-xl font-bold">GitHelp</h2>
                     </div>
-                    <p class="text-gray-400 text-sm mt-2">Simplificando seus comandos Git desde 2025</p>
+                    <p class="text-gray-400 text-sm">Simplificando seus comandos Git desde 2025</p>
                 </div>
 
-                <div class="flex space-x-6">
-                    <a href="https://github.com/Inojoza28" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gabrielinojoza/" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/dev_inojoza_/" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
+                <!-- Coluna de recursos -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Recursos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://git-scm.com/doc" target="_blank"
+                                class="text-gray-400 hover:text-orange-400 transition flex items-center">
+                                <i class="fas fa-book mr-2"></i>
+                                <span>Documentação Oficial do Git</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://git-scm.com/downloads" target="_blank"
+                                class="text-gray-400 hover:text-orange-400 transition flex items-center">
+                                <i class="fas fa-download mr-2"></i>
+                                <span>Download Git</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna de redes sociais -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Redes Sociais</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Inojoza28" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center">
+                            <i class="fab fa-github mr-2"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabrielinojoza/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/dev_inojoza_/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center">
+                            <i class="fab fa-instagram mr-2"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-6 pt-6 text-center">
+
+            <!-- Linha de copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
                 <p class="text-sm text-gray-400">
                     GitHelp v2.0 | Desenvolvido com ❤️ para simplificar o Git
                 </p>
@@ -344,5 +375,4 @@
     <script src="js/darkmode.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>
