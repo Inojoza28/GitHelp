@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 7
             },
             {
-                keywords: ['histórico', 'ver histórico', 'histórico dos commits', 'log',  'commits anteriores', 'log --oneline', 'listar commits', 'histórico resumido'],
+                keywords: ['histórico', 'ver histórico', 'histórico dos commits', 'log', 'descobrir hash do commit', 'Ver hash do commit', 'commits anteriores', 'log --oneline', 'listar commits', 'histórico resumido'],
                 command: 'git log --oneline',
                 explanation: 'Mostra o histórico de commits de forma resumida, com uma linha por commit. Inclui o hash abreviado e a mensagem do commit, facilitando a visualização do histórico.',
                 category: 'basics',
@@ -458,7 +458,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 { text: 'Pull de atualizações', icon: 'fa-download', query: 'baixar atualizações do remoto' },
                 { text: 'Fetch remoto', icon: 'fa-cloud-download-alt', query: 'fetch mudanças sem mesclar' },
                 { text: 'Adicionar remoto', icon: 'fa-link', query: 'adicionar repositório remoto' },
-                { text: 'Ver remotos', icon: 'fa-server', query: 'listar repositórios remotos' }
+                { text: 'Ver remotos', icon: 'fa-server', query: 'listar repositórios remotos' },
+                { text: 'Push com upstream', icon: 'fa-plug', query: 'configurar upstream primeira vez' },
+                { text: 'Limpar branches obsoletas', icon: 'fa-broom', query: 'limpar referências remotas' }
             ],
             undoing: [
                 { text: 'Desfazer commit', icon: 'fa-undo', query: 'desfazer último commit' },
@@ -466,6 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { text: 'Corrigir último commit', icon: 'fa-edit', query: 'modificar último commit' },
                 { text: 'Revert de commits', icon: 'fa-history', query: 'reverter commit com git revert' },
                 { text: 'Restaurar arquivo', icon: 'fa-file-medical', query: 'restaurar arquivo específico' },
+                { text: 'Reset completo', icon: 'fa-skull', query: 'resetar tudo com hard' }
             ],
             advanced: [
                 { text: 'Guardar com stash', icon: 'fa-box', query: 'Guardar mudanças com stash' },
