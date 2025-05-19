@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 7
             },
             {
-                keywords: ['mesclar', 'mescla', 'merge', 'juntar branches', 'combinar branches', 'git merge', 'integrar código', 'unir branches'],
+                keywords: ['mesclar', 'mescla', 'merge', 'branch na outra', 'juntar branches', 'combinar branches', 'git merge', 'integrar código', 'unir branches'],
                 command: 'git merge [nome-da-branch]',
                 explanation: 'Integra as alterações da branch especificada na branch atual. Substitua [nome-da-branch] pelo nome da branch que deseja mesclar na atual. Se houver conflitos, o Git irá pedir que você os resolva manualmente.',
                 category: 'branching',
