@@ -19,126 +19,126 @@ document.addEventListener('DOMContentLoaded', function () {
     const gitKnowledgeBase = {
         commands: [
             {
-                keywords: ['iniciar', 'começar', 'criar repositório', 'novo repositório', 'inicializar', 'init'],
+                keywords: ['iniciar', 'começar', 'criar repositório', 'começo', 'novo repositório', 'inicializar', 'init', 'git init', 'primeiro passo', 'começar projeto'],
                 command: 'git init',
                 explanation: 'Inicializa um novo repositório Git no diretório atual. Isso cria a estrutura necessária para o Git começar a rastrear mudanças.',
                 category: 'basics',
                 importance: 10
             },
             {
-                keywords: ['clonar', 'baixar repositório', 'clone', 'copiar repositório'],
+                keywords: ['clonar', 'baixar repositório', 'copia', 'cópia do projeto', 'clone', 'copiar repositório', 'git clone', 'trazer código', 'obter repositório'],
                 command: 'git clone [url-do-repositório]',
                 explanation: 'Cria uma cópia local de um repositório remoto. Substitua [url-do-repositório] pela URL do repositório que deseja clonar. Isso baixa todo o histórico e arquivos do repositório.',
                 category: 'basics',
                 importance: 10
             },
             {
-                keywords: ['status', 'ver status', 'verificar mudanças', 'estado atual'],
+                keywords: ['status', 'ver status', 'verificar mudanças', 'estado atual', 'git status', 'o que mudou', 'situação'],
                 command: 'git status',
                 explanation: 'Mostra o estado atual do repositório, incluindo arquivos modificados, adicionados e não rastreados. É um dos comandos mais utilizados para verificar o que mudou desde o último commit.',
                 category: 'basics',
                 importance: 10
             },
             {
-                keywords: ['adicionar', 'adicionar arquivos', 'adicionar mudanças', 'preparar', 'stage', 'staging'],
+                keywords: ['adicionar', 'adicionar arquivos', 'adicionar mudanças', 'preparar', 'stage', 'staging', 'git add', 'incluir tudo', 'preparar commit'],
                 command: 'git add .',
                 explanation: 'Adiciona todas as mudanças à área de preparação (staging) para serem incluídas no próximo commit. O ponto "." representa todos os arquivos modificados no diretório atual e seus subdiretórios.',
                 category: 'basics',
                 importance: 10
             },
             {
-                keywords: ['adicionar arquivo específico', 'adicionar um arquivo', 'stage arquivo'],
+                keywords: ['adicionar arquivo específico', 'adicionar um arquivo', 'stage arquivo', 'git add arquivo', 'selecionar arquivo', 'adicionar só um'],
                 command: 'git add [nome-do-arquivo]',
                 explanation: 'Adiciona um arquivo específico à área de preparação. Substitua [nome-do-arquivo] pelo nome do arquivo que deseja adicionar. Você também pode usar padrões glob como *.js para adicionar todos os arquivos JavaScript.',
                 category: 'basics',
                 importance: 8
             },
             {
-                keywords: ['commit', 'salvar', 'confirmar mudanças', 'fazer commit', 'commitar'],
+                keywords: ['commit', 'salvar', 'confirmar mudanças', 'fazer commit', 'commitar', 'git commit', 'registrar alterações', 'salvar versão'],
                 command: 'git commit -m "mensagem do commit"',
                 explanation: 'Salva as mudanças preparadas com uma mensagem descritiva. Substitua "mensagem do commit" por uma descrição breve e significativa das alterações realizadas. Uma boa mensagem de commit facilita o entendimento do histórico.',
                 category: 'basics',
                 importance: 10
             },
             {
-                keywords: ['enviar', 'push', 'mandar pro GitHub', 'subir alterações', 'publicar', 'enviar para remoto'],
+                keywords: ['enviar', ' envio', 'push', 'mandar pro GitHub', 'subir alterações', 'publicar', 'enviar para remoto', 'git push', 'pushar', 'enviar commits'],
                 command: 'git push origin main',
                 explanation: 'Envia os commits locais para o repositório remoto. Este comando envia para a branch "main" no remoto chamado "origin". Em repositórios mais antigos, você pode precisar usar "master" em vez de "main".',
                 category: 'remote',
                 importance: 10
             },
             {
-                keywords: ['atualizar', 'baixar atualizações', 'pull', 'puxar alterações', 'sincronizar'],
+                keywords: ['atualizar', 'baixo', 'pego', 'baixar atualizações', 'baixo alterações', 'pull', 'puxar alterações', 'sincronizar', 'git pull', 'trazer mudanças', 'atualizar local'],
                 command: 'git pull origin main',
                 explanation: 'Obtém e integra alterações do repositório remoto para sua branch local. Este comando puxa da branch "main" no remoto chamado "origin". É equivalente a executar git fetch seguido de git merge.',
                 category: 'remote',
                 importance: 10
             },
             {
-                keywords: ['branch', 'criar branch', 'nova branch'],
+                keywords: ['branch', 'criar branch', 'nova branch', 'git branch', 'ramificação', 'criar ramificação'],
                 command: 'git branch [nome-da-branch]',
                 explanation: 'Cria uma nova branch. Substitua [nome-da-branch] pelo nome que deseja dar à nova branch. O comando apenas cria a branch, mas não muda para ela automaticamente.',
                 category: 'branching',
                 importance: 8
             },
             {
-                keywords: ['mudar branch', 'trocar branch', 'checkout', 'mudar para branch'],
+                keywords: ['mudar branch', 'trocar branch', 'checkout', 'mudar para branch', 'git checkout', 'ir para branch', 'alternar branch', 'alterno', 'alterno entre branches'],
                 command: 'git checkout [nome-da-branch]',
                 explanation: 'Muda para a branch especificada. Substitua [nome-da-branch] pelo nome da branch para a qual deseja mudar. Este comando atualiza os arquivos no seu diretório de trabalho para corresponder à versão armazenada na branch especificada.',
                 category: 'branching',
                 importance: 9
             },
             {
-                keywords: ['criar e mudar branch', 'nova branch e mudar', 'checkout com branch nova'],
+                keywords: ['criar e mudar branch', 'nova branch e mudar', 'checkout com branch nova', 'checkout -b', 'criar e trocar', 'nova e já mudar'],
                 command: 'git checkout -b [nome-da-branch]',
                 explanation: 'Cria uma nova branch e muda para ela imediatamente. Substitua [nome-da-branch] pelo nome que deseja dar à nova branch. É um atalho para executar "git branch" seguido de "git checkout".',
                 category: 'branching',
                 importance: 9
             },
             {
-                keywords: ['listar branches', 'ver branches', 'mostrar branches', 'todas as branches'],
+                keywords: ['listar branches', 'ver branches', 'mostrar branches', 'todas as branches', 'quais branches', 'listar ramificações', 'exibir branches'],
                 command: 'git branch',
                 explanation: 'Lista todas as branches locais. A branch atual é marcada com um asterisco (*). Para ver também branches remotas, use "git branch -a".',
                 category: 'branching',
                 importance: 7
             },
             {
-                keywords: ['mesclar', 'merge', 'juntar branches', 'combinar branches'],
+                keywords: ['mesclar', 'mescla', 'merge', 'juntar branches', 'combinar branches', 'git merge', 'integrar código', 'unir branches'],
                 command: 'git merge [nome-da-branch]',
                 explanation: 'Integra as alterações da branch especificada na branch atual. Substitua [nome-da-branch] pelo nome da branch que deseja mesclar na atual. Se houver conflitos, o Git irá pedir que você os resolva manualmente.',
                 category: 'branching',
                 importance: 9
             },
             {
-                keywords: ['desfazer commit', 'reverter commit', 'voltar commit', 'remover último commit'],
+                keywords: ['desfazer commit', 'reverter commit', 'voltar commit', 'remover último commit', 'reset soft', 'cancelar commit', 'corrigir commit'],
                 command: 'git reset --soft HEAD~1',
                 explanation: 'Desfaz o último commit mantendo as alterações na área de preparação. O parâmetro "--soft" preserva suas mudanças para que você possa ajustá-las e fazer o commit novamente.',
                 category: 'undoing',
                 importance: 8
             },
             {
-                keywords: ['desfazer alterações', 'descartar mudanças', 'resetar', 'limpar alterações'],
+                keywords: ['desfazer alterações', 'descartar mudanças', 'resetar', 'limpar alterações', 'checkout -- .', 'voltar ao original', 'descartar não commitadas'],
                 command: 'git checkout -- .',
                 explanation: 'Descarta todas as alterações não commitadas no diretório de trabalho. CUIDADO: Isso apaga permanentemente todas as mudanças que não foram adicionadas à área de preparação.',
                 category: 'undoing',
                 importance: 7
             },
             {
-                keywords: ['histórico', 'ver histórico', 'log', 'commits anteriores'],
+                keywords: ['histórico', 'ver histórico', 'histórico dos commits', 'log',  'commits anteriores', 'log --oneline', 'listar commits', 'histórico resumido'],
                 command: 'git log --oneline',
                 explanation: 'Mostra o histórico de commits de forma resumida, com uma linha por commit. Inclui o hash abreviado e a mensagem do commit, facilitando a visualização do histórico.',
                 category: 'basics',
                 importance: 8
             },
             {
-                keywords: ['diferenças', 'ver mudanças', 'diff', 'o que mudou'],
+                keywords: ['diferenças', 'ver mudanças', 'diff', 'diferença entre arquivos', 'o que mudou', 'git diff', 'comparar código', 'mostrar alterações'],
                 command: 'git diff',
                 explanation: 'Mostra as diferenças entre o diretório de trabalho e a área de preparação. Para ver apenas as diferenças de um arquivo específico, use "git diff [nome-do-arquivo]".',
                 category: 'basics',
                 importance: 7
             },
             {
-                keywords: ['remoto', 'adicionar remoto', 'configurar origin', 'conectar repositório remoto'],
+                keywords: ['remoto', 'adiciono remoto', 'adicionar remoto', 'configurar origin', 'conectar repositório remoto', 'git remote add', 'vincular ao GitHub', 'configurar remoto'],
                 command: 'git remote add origin [url-do-repositorio]',
                 explanation: 'Conecta seu repositório local a um repositório remoto. Substitua [url-do-repositorio] pela URL do repositório remoto. Normalmente usado após criar um novo repositório local que precisa ser conectado ao GitHub ou outro serviço.',
                 category: 'remote',
@@ -152,77 +152,77 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 7
             },
             {
-                keywords: ['recuperar stash', 'aplicar stash', 'restaurar alterações salvas'],
+                keywords: ['recuperar stash', 'aplicar stash', 'restaurar alterações salvas', 'stash pop', 'git stash pop', 'trazer de volta', 'pegar alterações guardadas'],
                 command: 'git stash pop',
                 explanation: 'Aplica e remove o stash mais recente, restaurando as alterações salvas anteriormente. Isso pode causar conflitos se as alterações aplicadas conflitarem com o estado atual dos arquivos.',
                 category: 'advanced',
                 importance: 6
             },
             {
-                keywords: ['tag', 'versão', 'marcar versão', 'release', 'criar tag'],
+                keywords: ['tag', 'versão', 'marcar versão', 'release', 'criar tag', 'git tag', 'etiquetar versão', 'marcar lançamento'],
                 command: 'git tag -a v1.0 -m "Versão 1.0"',
                 explanation: 'Cria uma tag anotada para marcar pontos importantes como lançamentos de versão. As tags são frequentemente usadas para marcar releases oficiais e são mais permanentes que branches.',
                 category: 'advanced',
                 importance: 6
             },
             {
-                keywords: ['sincronizar branch', 'atualizar branch com main', 'rebase', 'rebase com main'],
+                keywords: ['sincronizar branch', 'atualizar branch com main', 'rebase', 'rebase com main', 'git rebase', 'reorganizar commits', 'atualizar base'],
                 command: 'git rebase main',
                 explanation: 'Reaplica os commits da branch atual sobre a branch main, mantendo um histórico linear. Ao contrário do merge, o rebase reescreve o histórico de commits, criando uma linha de desenvolvimento mais limpa.',
                 category: 'advanced',
                 importance: 7
             },
             {
-                keywords: ['resolver conflitos', 'conflitos de merge', 'cancelar merge'],
+                keywords: ['resolver conflitos', 'conflitos de merge', 'cancelar merge', 'git merge --abort', 'abortar mesclagem', 'interromper merge'],
                 command: 'git merge --abort',
                 explanation: 'Cancela uma operação de merge em caso de conflitos. Após resolver conflitos manualmente, use git add para marcar os arquivos como resolvidos e git commit para finalizar o merge.',
                 category: 'advanced',
                 importance: 7
             },
             {
-                keywords: ['ignorar arquivos', 'configurar gitignore', 'criar gitignore'],
+                keywords: ['ignorar arquivos', 'configurar gitignore', 'criar gitignore', 'git ignore', 'excluir do rastreamento', 'não rastrear arquivos'],
                 command: 'echo "node_modules/" >> .gitignore',
                 explanation: 'Adiciona "node_modules/" ao arquivo .gitignore para que o Git ignore essa pasta. O arquivo .gitignore especifica arquivos e diretórios intencionalmente não rastreados que o Git deve ignorar.',
                 category: 'basics',
                 importance: 7
             },
             {
-                keywords: ['ver remoto', 'listar remotos', 'mostrar repositórios remotos'],
+                keywords: ['ver remoto', 'listar remotos', 'mostrar repositórios remotos', 'git remote -v', 'verificar remotos', 'exibir conexões remotas'],
                 command: 'git remote -v',
                 explanation: 'Lista todos os repositórios remotos configurados com suas URLs. A opção "-v" mostra as URLs usadas para fetch e push para cada remoto.',
                 category: 'remote',
                 importance: 6
             },
             {
-                keywords: ['forçar push', 'push forçado', 'push -f'],
+                keywords: ['forçar push', 'push forçado', 'push -f', 'git push --force', 'sobrescrever remoto', 'push force'],
                 command: 'git push --force origin main',
                 explanation: 'Força o envio de alterações para o repositório remoto, mesmo que isso cause conflitos. USE COM EXTREMO CUIDADO! Este comando pode sobrescrever trabalho de outras pessoas e causar perda de dados irrecuperável.',
                 category: 'advanced',
                 importance: 5
             },
             {
-                keywords: ['deletar branch', 'remover branch', 'apagar branch'],
+                keywords: ['deletar branch', 'remover branch', 'apagar branch', 'apagar', 'apagar uma branch', 'git branch -d', 'excluir branch', 'eliminar branch'],
                 command: 'git branch -d [nome-da-branch]',
                 explanation: 'Remove uma branch local após ela ter sido mesclada. Use -D para forçar a remoção de uma branch não mesclada. Para remover uma branch remota, use "git push origin --delete [nome-da-branch]".',
                 category: 'branching',
                 importance: 6
             },
             {
-                keywords: ['amend', 'corrigir commit', 'modificar último commit', 'alterar commit'],
+                keywords: ['amend', 'reescrevo', 'corrigir commit', 'modificar último commit', 'alterar commit', 'git commit --amend', 'ajustar mensagem', 'adicionar ao último commit'],
                 command: 'git commit --amend -m "Nova mensagem"',
                 explanation: 'Modifica o último commit, alterando sua mensagem ou incluindo novas alterações. Útil para corrigir erros de digitação na mensagem ou adicionar pequenas mudanças esquecidas.',
                 category: 'undoing',
                 importance: 7
             },
             {
-                keywords: ['ver author', 'quem modificou', 'blame', 'responsável pela linha'],
+                keywords: ['ver author', 'quem modificou', 'blame', 'responsável pela linha', 'git blame', 'histórico por linha', 'identificar autor'],
                 command: 'git blame [arquivo]',
                 explanation: 'Mostra quem modificou cada linha de um arquivo, com informações sobre o commit. Útil para entender o contexto de uma mudança ou identificar quem é o melhor contato para uma parte específica do código.',
                 category: 'advanced',
                 importance: 5
             },
             {
-                keywords: ['cherry-pick', 'aplicar commit específico', 'trazer commit'],
+                keywords: ['cherry-pick', 'aplicar commit específico', 'trazer commit', 'git cherry-pick', 'selecionar commit', 'copiar commit específico'],
                 command: 'git cherry-pick [hash-do-commit]',
                 explanation: 'Aplica as alterações de um commit específico na branch atual. Substitua [hash-do-commit] pelo identificador do commit que deseja aplicar. Útil para trazer mudanças específicas de uma branch para outra.',
                 category: 'advanced',
@@ -236,84 +236,84 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 5
             },
             {
-                keywords: ['fetch', 'buscar atualizações', 'baixar sem mesclar'],
+                keywords: ['fetch', 'buscar atualizações', 'baixar sem mesclar', 'git fetch', 'atualizar referências', 'obter mudanças remotas'],
                 command: 'git fetch origin',
                 explanation: 'Baixa conteúdo de um repositório remoto sem mesclar automaticamente. Isso permite verificar as mudanças antes de integrá-las ao seu trabalho local.',
                 category: 'remote',
                 importance: 8
             },
             {
-                keywords: ['status detalhado', 'status verboso', 'status completo'],
+                keywords: ['status detalhado', 'status verboso', 'status completo', 'git status -v', 'ver detalhes', 'status com diferenças'],
                 command: 'git status -v',
                 explanation: 'Mostra o status detalhado do repositório com as diferenças em formato patch para os arquivos na área de preparação.',
                 category: 'basics',
                 importance: 6
             },
             {
-                keywords: ['log gráfico', 'visualizar branches', 'árvore de commits'],
+                keywords: ['log gráfico', 'visualizar branches', 'árvore de commits', 'git log --graph', 'histórico visual', 'ver ramificações'],
                 command: 'git log --graph --oneline --all',
                 explanation: 'Mostra o histórico de commits como um gráfico ASCII, útil para visualizar como as branches se relacionam. A opção --all mostra todas as branches.',
                 category: 'advanced',
                 importance: 7
             },
             {
-                keywords: ['comparar branches', 'diferença entre branches', 'diff branches'],
+                keywords: ['comparar branches', 'diferença entre branches', 'diff branches', 'git diff branch', 'ver diferenças entre branches', 'contrastar branches'],
                 command: 'git diff branch1..branch2',
                 explanation: 'Mostra as diferenças entre duas branches. Substitua branch1 e branch2 pelos nomes das branches que deseja comparar.',
                 category: 'branching',
                 importance: 6
             },
             {
-                keywords: ['configurar usuário', 'definir nome', 'configurar email', 'identidade git'],
+                keywords: ['configurar usuário', 'definir nome', 'configurar email', 'identidade git', 'git config', 'configurar identidade', 'definir autor'],
                 command: 'git config --global user.name "Seu Nome"',
                 explanation: 'Configura seu nome de usuário global para commits. Use git config --global user.email "seu@email.com" para configurar seu email.',
                 category: 'basics',
                 importance: 8
             },
             {
-                keywords: ['limpar', 'remover não rastreados', 'clean', 'arquivos não rastreados', 'limpar diretório'],
+                keywords: ['limpar', 'remover não rastreados', 'clean', 'arquivos não rastreados', 'limpar diretório', 'git clean', 'remover arquivos novos', 'limpar sujeira'],
                 command: 'git clean -fd',
                 explanation: 'Remove arquivos e diretórios não rastreados do diretório de trabalho. A opção "-f" força a remoção e "-d" inclui diretórios não rastreados. CUIDADO: Este comando remove permanentemente arquivos que não foram adicionados ao Git.',
                 category: 'undoing',
                 importance: 7
             },
             {
-                keywords: ['show', 'ver commit', 'detalhes do commit', 'mostrar commit', 'exibir commit'],
+                keywords: ['show', 'ver commit', 'detalhes do commit', 'mostrar commit', 'exibir commit', 'git show', 'conteúdo do commit', 'ver alterações do commit'],
                 command: 'git show [hash-do-commit]',
                 explanation: 'Mostra informações detalhadas sobre um commit específico, incluindo o diff completo. Se nenhum hash for especificado, mostra informações sobre o commit mais recente (HEAD).',
                 category: 'basics',
                 importance: 7
             },
             {
-                keywords: ['reset hard', 'resetar tudo', 'limpar completamente', 'voltar para commit', 'reset completo'],
+                keywords: ['reset hard', 'resetar tudo', 'limpar completamente', 'voltar para commit', 'reset completo', 'git reset --hard', 'descartar todas alterações', 'voltar ao estado anterior'],
                 command: 'git reset --hard [hash-do-commit]',
                 explanation: 'Redefine o estado do repositório para um commit específico, descartando todas as alterações posteriores. CUIDADO: Este comando causa perda permanente de trabalho não commitado.',
                 category: 'undoing',
                 importance: 7
             },
             {
-                keywords: ['revert', 'reverter commit', 'desfazer com commit', 'anular commit'],
+                keywords: ['revert', 'reverter', 'reverter commit', 'desfazer com commit', 'anular commit', 'git revert', 'desfazer mantendo histórico', 'criar commit que desfaz'],
                 command: 'git revert [hash-do-commit]',
                 explanation: 'Cria um novo commit que desfaz todas as alterações feitas no commit especificado. Ao contrário de reset, este comando preserva o histórico, criando um novo commit que "desfaz" as alterações em vez de removê-las do histórico.',
                 category: 'undoing',
                 importance: 8
             },
             {
-                keywords: ['shortlog', 'resumo por autor', 'estatísticas de commit', 'commits por pessoa'],
+                keywords: ['shortlog', 'resumo por autor', 'estatísticas de commit', 'commits por pessoa', 'git shortlog', 'quem contribuiu mais', 'listar commits por autor'],
                 command: 'git shortlog -sn',
                 explanation: 'Resumo do log de commits agrupados por autor. A opção "-s" mostra apenas o número de commits e "-n" ordena pelo número de commits (maior para menor). Útil para visualizar quem contribuiu mais para o projeto.',
                 category: 'advanced',
                 importance: 5
             },
             {
-                keywords: ['bisect', 'encontrar bug', 'busca binária', 'localizar problema'],
+                keywords: ['bisect', 'encontrar bug', 'busca binária', 'localizar problema', 'git bisect', 'achar onde quebrou', 'identificar regressão'],
                 command: 'git bisect start',
                 explanation: 'Inicia uma busca binária para encontrar o commit que introduziu um bug. Após iniciar, você marca commits como "bons" (git bisect good) ou "ruins" (git bisect bad), e o Git navega automaticamente pelo histórico para ajudar a encontrar o commit problemático.',
                 category: 'advanced',
                 importance: 6
             },
             {
-                keywords: ['listar arquivos', 'ls-files', 'ver arquivos rastreados', 'arquivos no índice'],
+                keywords: ['listar arquivos', 'ls-files', 'ver arquivos rastreados', 'arquivos no índice', 'git ls-files', 'mostrar arquivos git', 'listar arquivos rastreados'],
                 command: 'git ls-files',
                 explanation: 'Lista todos os arquivos rastreados pelo Git no diretório atual. Pode ser usado com opções como "--stage" para mostrar informações detalhadas do índice ou "-o" para mostrar arquivos não rastreados.',
                 category: 'basics',
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 7
             },
             {
-                keywords: ['amend sem editar mensagem', 'commit --amend --no-edit', 'emendar sem editar', 'corrigir sem mudar mensagem'],
+                keywords: ['amend sem editar mensagem', 'commitar sem editar mensagem', 'commit --amend --no-edit', 'emendar sem editar', 'corrigir sem mudar mensagem'],
                 command: 'git commit --amend --no-edit',
                 explanation: 'Adiciona as mudanças na área de preparação ao último commit sem alterar sua mensagem. Útil para fazer pequenas correções ou adições ao commit mais recente sem criar um novo commit.',
                 category: 'undoing',
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 importance: 8
             },
             {
-                keywords: ['renomear branch', 'mudar nome da branch', 'branch rename', 'alterar nome de branch'],
+                keywords: ['renomear branch', 'renomear', 'renomeio', 'mudar nome da branch', 'branch rename', 'alterar nome de branch'],
                 command: 'git branch -m [nome-antigo] [nome-novo]',
                 explanation: 'Renomeia uma branch. Se omitir [nome-antigo], renomeia a branch atual. Para renomear uma branch remota, é necessário renomear localmente, deletar a branch remota antiga e fazer push da nova.',
                 category: 'branching',
