@@ -1,4 +1,3 @@
-// Melhorando a inicialização e a manipulação de eventos para o toggle de tema
 document.addEventListener('DOMContentLoaded', function() {
   // Carrega o tema salvo
   loadSavedTheme();
@@ -7,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const themeToggleButtons = document.querySelectorAll('#themeToggle');
   themeToggleButtons.forEach(button => {
     button.addEventListener('click', toggleTheme);
+  });
+  
+  // Adiciona atalho de teclado (Alt+T) para alternar o tema
+  document.addEventListener('keydown', function(event) {
+    // Verifica se a combinação de teclas Alt+T foi pressionada
+    if (event.altKey && (event.key === 't' || event.key === 'T')) {
+      toggleTheme();
+      event.preventDefault(); // Previne o comportamento padrão do navegador
+    }
   });
 });
 
