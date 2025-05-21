@@ -162,15 +162,17 @@
                 <!-- Separador elegante com identidade visual do GitHelp -->
                 <div class="flex items-center my-4">
                     <div class="flex-grow h-px"
-                        style="background: linear-gradient(to right, transparent, var(--primary-light))"></div>
+                        style="background: linear-gradient(to right, transparent, var(--primary-light)); opacity: 0.5;">
+                    </div>
                     <div class="mx-2">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full shadow-sm"
-                            style="background-color: var(--accent); border: 2px solid var(--primary-light)">
-                            <i class="fas fa-code text-sm" style="color: var(--primary)"></i>
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full"
+                            style="background-color: var(--accent); border: 1px solid rgba(255, 165, 0, 0.4); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
+                            <i class="fas fa-code-commit text-sm" style="color: var(--primary)"></i>
                         </span>
                     </div>
                     <div class="flex-grow h-px"
-                        style="background: linear-gradient(to left, transparent, var(--primary-light))"></div>
+                        style="background: linear-gradient(to left, transparent, var(--primary-light)); opacity: 0.5;">
+                    </div>
                 </div>
 
 
@@ -221,7 +223,8 @@
                     </div>
 
                     <p class="text-xs text-gray-500 mt-2">
-                        <i class="fas fa-hand-pointer mr-1 text-gray-400"></i> Selecione um comando para copiá-lo ou visualizar
+                        <i class="fas fa-hand-pointer mr-1 text-gray-400"></i> Selecione um comando para copiá-lo ou
+                        visualizar
                         detalhes
                     </p>
                 </div>
@@ -371,72 +374,72 @@
 
     <!-- Footer -->
     <footer style="background-color: var(--dark);" class="text-white py-10 mt-12">
-    <div class="container mx-auto px-4">
-        <!-- Primeira linha do footer -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Coluna de informações do site -->
-            <div>
-                <div class="flex items-center mb-4">
-                    <div class="bg-white p-2 rounded-full mr-3 shadow-inner">
-                        <img src="img/logo-githelp.png" alt="Logo GitHelp" class="w-8 h-8 object-contain">
+        <div class="container mx-auto px-4">
+            <!-- Primeira linha do footer -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coluna de informações do site -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white p-2 rounded-full mr-3 shadow-inner">
+                            <img src="img/logo-githelp.png" alt="Logo GitHelp" class="w-8 h-8 object-contain">
+                        </div>
+                        <h2 class="text-base md:text-lg font-bold">GitHelp</h2>
                     </div>
-                    <h2 class="text-base md:text-lg font-bold">GitHelp</h2>
+                    <p class="text-gray-400 text-sm md:text-base">Simplificando seus comandos Git desde 2025</p>
                 </div>
-                <p class="text-gray-400 text-sm md:text-base">Simplificando seus comandos Git desde 2025</p>
+
+                <!-- Coluna de recursos -->
+                <div>
+                    <h3 class="text-sm md:text-base font-semibold mb-4">Recursos</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://git-scm.com/doc" target="_blank"
+                                class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
+                                <i class="fas fa-book mr-2"></i>
+                                <span>Documentação Oficial do Git</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://git-scm.com/downloads" target="_blank"
+                                class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
+                                <i class="fas fa-download mr-2"></i>
+                                <span>Download Git</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna de redes sociais -->
+                <div>
+                    <h3 class="text-sm md:text-base font-semibold mb-4">Redes Sociais</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Inojoza28" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
+                            <i class="fab fa-github mr-2"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabrielinojoza/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/dev_inojoza_/" target="_blank"
+                            class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
+                            <i class="fab fa-instagram mr-2"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <!-- Coluna de recursos -->
-            <div>
-                <h3 class="text-sm md:text-base font-semibold mb-4">Recursos</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <a href="https://git-scm.com/doc" target="_blank"
-                            class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
-                            <i class="fas fa-book mr-2"></i>
-                            <span>Documentação Oficial do Git</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://git-scm.com/downloads" target="_blank"
-                            class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
-                            <i class="fas fa-download mr-2"></i>
-                            <span>Download Git</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Coluna de redes sociais -->
-            <div>
-                <h3 class="text-sm md:text-base font-semibold mb-4">Redes Sociais</h3>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://github.com/Inojoza28" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
-                        <i class="fab fa-github mr-2"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gabrielinojoza/" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
-                        <i class="fab fa-linkedin mr-2"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.instagram.com/dev_inojoza_/" target="_blank"
-                        class="text-gray-400 hover:text-orange-400 transition flex items-center text-sm md:text-base">
-                        <i class="fab fa-instagram mr-2"></i>
-                        <span>Instagram</span>
-                    </a>
-                </div>
+            <!-- Linha de copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p class="text-sm md:text-base text-gray-400">
+                    GitHelp v2.0 | Desenvolvido com ❤️ para simplificar o Git
+                </p>
             </div>
         </div>
-
-        <!-- Linha de copyright -->
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
-            <p class="text-sm md:text-base text-gray-400">
-                GitHelp v2.0 | Desenvolvido com ❤️ para simplificar o Git
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="js/darkmode.js"></script>
     <script src="js/tutorial.js"></script>
