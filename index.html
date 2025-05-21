@@ -159,19 +159,18 @@
                     </p>
                 </div>
 
-                <!-- Separador elegante com identidade visual do GitHelp -->
-                <div class="flex items-center my-4">
-                    <div class="flex-grow h-px"
-                        style="background: linear-gradient(to right, transparent, var(--primary-light)); opacity: 0.5;">
-                    </div>
-                    <div class="mx-2">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full"
-                            style="background-color: var(--accent); border: 1px solid rgba(255, 165, 0, 0.4); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
-                            <i class="fas fa-code-commit text-sm" style="color: var(--primary)"></i>
-                        </span>
-                    </div>
-                    <div class="flex-grow h-px"
-                        style="background: linear-gradient(to left, transparent, var(--primary-light)); opacity: 0.5;">
+                <!-- Separador de section com identidade visual do GitHelp -->
+                <div class="my-8 group">
+                    <div class="relative h-px transition-all duration-300 ease-out">
+                        <div
+                            class="absolute inset-0 h-px bg-gradient-to-r from-transparent via-orange-400/30 to-transparent">
+                        </div>
+                        <div
+                            class="absolute inset-0 h-px bg-gradient-to-r from-transparent via-orange-400/40 to-transparent opacity-70 transform-gpu [-mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]">
+                        </div>
+                        <div
+                            class="absolute inset-0 h-px bg-gradient-to-r from-transparent via-orange-400/50 to-transparent opacity-40 group-hover:via-orange-400/60 group-hover:opacity-100 transition-opacity duration-200">
+                        </div>
                     </div>
                 </div>
 
