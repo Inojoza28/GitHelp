@@ -13,7 +13,7 @@
         }
 
         [data-theme="dark"] body {
-        background-color: var(--bg-main) !important;
+            background-color: var(--bg-main) !important;
         }
 
         body {
@@ -225,13 +225,16 @@
             transition: all 0.3s ease;
             position: relative;
             top: 50%;
-            transform: translateY(-50%); /* Centralização vertical precisa */
-            border: 2px solid transparent; /* Previne saltos de layout */
+            transform: translateY(-50%);
+            /* Centralização vertical precisa */
+            border: 2px solid transparent;
+            /* Previne saltos de layout */
         }
 
         .btn-primary:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-50%) scale(1.05);  /* Mantém a posição e adiciona escala */
+            transform: translateY(-50%) scale(1.05);
+            /* Mantém a posição e adiciona escala */
             box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
             border-color: rgba(255, 255, 255, 0.2);
         }
@@ -300,4 +303,165 @@
         .enhanced-tooltip:hover::after {
             visibility: visible;
             opacity: 1;
+        }
+
+
+        /* Estilos para os tutoriais */
+        .tutorial-pill {
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(255, 87, 34, 0.2);
+        }
+
+        .tutorial-pill.active-tutorial {
+            background-color: var(--primary) !important;
+            color: white !important;
+        }
+
+        .tutorial-pill.active-tutorial i {
+            color: white !important;
+        }
+
+        #tutorialSection {
+            transition: all 0.3s ease;
+            border-left: 2px solid var(--primary);
+        }
+
+        #tutorialSection.animate-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos para o card de comando */
+        .command-card {
+            border-left: 4px solid var(--primary);
+        }
+
+        .command-card pre {
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+        }
+
+        /* Botão de copiar */
+        #copyTutorialCommand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        #copyTutorialCommand:hover {
+            background-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        /* Botões de navegação */
+        #prevStepButton,
+        #nextStepButton,
+        #closeTutorialButton {
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        #prevStepButton:hover:not([disabled]),
+        #nextStepButton:hover,
+        #closeTutorialButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #closeTutorialButton {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            color: #444;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+
+        #closeTutorialButton:hover {
+            background: linear-gradient(145deg, #e9ecef, #dee2e6);
+            color: #222;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        /* Botão de minimizar/maximizar */
+        #toggleTutorialButton {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            background-color: transparent;
+        }
+
+        #toggleTutorialButton:hover {
+            background-color: var(--accent);
+            color: var(--primary) !important;
+        }
+
+        #toggleTutorialButton i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        #toggleTutorialButton:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Animação para o container de tutoriais */
+        #tutorialContainer.animate-in {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 640px) {
+            #tutorialSection .flex.justify-between {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #prevStepButton,
+            #nextStepButton,
+            #closeTutorialButton {
+                width: 100%;
+            }
         }

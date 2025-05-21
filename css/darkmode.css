@@ -96,19 +96,22 @@ body {
 
 /* Componentes específicos */
 [data-theme="dark"] header {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 32, 44, 0.98) 0%,      
-    rgba(26, 32, 44, 0.83) 20%,   
-    rgba(26, 32, 44, 0.566) 60%,     
-    rgba(26, 32, 44, 0.395) 100%     
-  );
-  box-shadow: 
-    0 8px 24px -6px rgba(var(--shadow-color), 0.3),  /* Camada principal difusa */
-    0 4px 12px -4px rgba(var(--shadow-color), 0.2),   /* Profundidade média */
-    0 2px 4px -1px rgba(var(--shadow-color), 0.15),  /* Detalhe sutil */
-    inset 0 -1px 0 0 rgba(255, 255, 255, 0.06);    /* Linha de separação delicada */
-  backdrop-filter: blur(4px);  /* Efeito de vidro fosco sutil */
+  background: linear-gradient(to bottom,
+      rgba(26, 32, 44, 0.98) 0%,
+      rgba(26, 32, 44, 0.83) 20%,
+      rgba(26, 32, 44, 0.566) 60%,
+      rgba(26, 32, 44, 0.395) 100%);
+  box-shadow:
+    0 8px 24px -6px rgba(var(--shadow-color), 0.3),
+    /* Camada principal difusa */
+    0 4px 12px -4px rgba(var(--shadow-color), 0.2),
+    /* Profundidade média */
+    0 2px 4px -1px rgba(var(--shadow-color), 0.15),
+    /* Detalhe sutil */
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.06);
+  /* Linha de separação delicada */
+  backdrop-filter: blur(4px);
+  /* Efeito de vidro fosco sutil */
 }
 
 [data-theme="dark"] header h1 {
@@ -197,24 +200,25 @@ body {
 [data-theme="dark"] #themeToggle {
   background-color: rgba(45, 55, 72, 0.8);
   color: var(--primary);
-  box-shadow: none; 
-  border: 1px solid rgba(255, 255, 255, 0.1); 
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] #themeToggle:hover {
   background-color: rgba(58, 69, 86, 0.9);
-  transform: translateY(0); 
-  box-shadow: none; 
-  border-color: var(--primary); 
+  transform: translateY(0);
+  box-shadow: none;
+  border-color: var(--primary);
 }
 
 [data-theme="dark"] #themeIcon {
-  color: #aeaeae ; 
+  color: #aeaeae;
   transition: transform 0.3s ease;
 }
 
 [data-theme="dark"] #themeToggle:hover #themeIcon {
-  transform: rotate(45deg); /* Rotação sutil do ícone no hover */
+  transform: rotate(45deg);
+  /* Rotação sutil do ícone no hover */
 }
 
 /* Melhorias no hover do histórico */
@@ -253,7 +257,7 @@ body {
   background-color: var(--primary);
   color: var(--dark);
   border: 1px solid transparent;
-  box-shadow: 0 0 10px rgba(255, 127, 80, 0.3); 
+  box-shadow: 0 0 10px rgba(255, 127, 80, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -273,69 +277,70 @@ body {
 
 /* Seção de resultado */
 [data-theme="dark"] #resultSection {
-  background-color: #2a303c; 
+  background-color: #2a303c;
 
 }
 
 /* Ajuste nos títulos do resultSection para reduzir o impacto do laranja */
 [data-theme="dark"] #resultSection h3,
 [data-theme="dark"] #resultSection h4 {
-  color: #e2e8f0 !important; 
+  color: #e2e8f0 !important;
 }
 
 /* Mantém os ícones com uma cor laranja mais suave */
 [data-theme="dark"] #resultSection h3 i,
 [data-theme="dark"] #resultSection h4 i {
-  color: rgba(255, 127, 80, 0.8); 
+  color: rgba(255, 127, 80, 0.8);
 }
 
 /* Ajuste no comando para melhor legibilidade */
 [data-theme="dark"] .command-card {
-  background:linear-gradient(95deg, #ff7f50cf, #ff7f506e, #1a202c00);
-  border: none; 
+  background: linear-gradient(95deg, #ff7f50cf, #ff7f506e, #1a202c00);
+  border: none;
 }
 
 /* No arquivo darkmode.css */
 [data-theme="dark"] .card[style*="linear-gradient(135deg, #FF8A65"] {
-    background: linear-gradient(135deg, #ff8a65ad 0%, #ff5722b3 100%) !important;
+  background: linear-gradient(135deg, #ff8a65ad 0%, #ff5722b3 100%) !important;
 }
 
 [data-theme="dark"] #commandResult {
-  color: #ffffff !important; 
-  font-weight: 500; 
+  color: #ffffff !important;
+  font-weight: 500;
 }
 
 /* Destacar apenas partes importantes do comando com cor */
 [data-theme="dark"] #commandResult .highlight {
-  color: var(--primary); 
-  font-weight: 600; 
+  color: var(--primary);
+  font-weight: 600;
 }
 
 /* Melhoria na caixa de explicação */
 [data-theme="dark"] #commandExplanation {
   background-color: #1e2837;
-  color: #d1d5db; 
+  color: #d1d5db;
   border: 1px solid var(--border);
 }
 
 /* Ajustes na seção de feedback */
 [data-theme="dark"] #resultSection .border-orange-200 {
-  border-color: var(--border); 
+  border-color: var(--border);
 }
 
 [data-theme="dark"] #resultSection p[style*="color: var(--primary-dark)"] {
-  color: #d1d5db !important; /* Sobrescreve o estilo inline */
+  color: #d1d5db !important;
+  /* Sobrescreve o estilo inline */
 }
 
 /* Botões de feedback mais suaves */
 [data-theme="dark"] #feedbackYes {
-  background-color: rgba(16, 185, 129, 0.2); 
-  color: #10b981; 
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
 }
 
 [data-theme="dark"] #feedbackNo {
-  background-color: rgba(239, 68, 68, 0.2); 
-  color: #ef4444; 
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
 }
 
 [data-theme="dark"] #feedbackYes:hover {
@@ -348,26 +353,56 @@ body {
 
 /* Botão de copiar com cor mais suave */
 [data-theme="dark"] #copyButton {
-  color: #9ca3af; 
+  color: #9ca3af;
 }
 
 [data-theme="dark"] #copyButton:hover {
-  color: #ff7f50; 
+  color: #ff7f50;
 }
 
 /* Badge com cor mais suave */
 [data-theme="dark"] #resultSection .badge {
-  background-color: rgba(255, 127, 80, 0.1); 
-  color: rgba(255, 127, 80, 0.8); 
+  background-color: rgba(255, 127, 80, 0.1);
+  color: rgba(255, 127, 80, 0.8);
 }
 
 /* Efeito de pulso ao trocar tema */
 @keyframes pulse-theme {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .pulse-theme {
   animation: pulse-theme 0.5s ease-in-out;
+}
+
+/* MODO DARK TUTORIAL  */
+[data-theme="dark"] .tutorial-pill {
+  background-color: rgba(45, 55, 72, 0.4);
+  color: #e5e7eb;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .tutorial-pill:hover {
+  background-color: rgba(45, 55, 72, 0.7);
+  /* hover desejado */
+}
+
+/* Estilos para o modo escuro */
+[data-theme="dark"] #tutorialSection h3,
+[data-theme="dark"] #tutorialSection h4 {
+  color: white !important;
+}
+
+[data-theme="dark"] #tutorialSection .command-card pre {
+  color: white !important;
 }
