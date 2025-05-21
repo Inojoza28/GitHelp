@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const gitKnowledgeBase = {
         commands: [
             {
-                keywords: ['iniciar', 'começar', 'criar repositório', 'começo', 'novo repositório', 'inicializar', 'init', 'git init', 'primeiro passo', 'começar projeto'],
+                keywords: ['iniciar', 'começar', 'criar repositório', 'começo', 'primeiro passo', 'primeiros passos', 'novo repositório', 'inicializar', 'init', 'git init', 'primeiro passo', 'começar projeto'],
                 command: 'git init',
                 explanation: 'Inicializa um novo repositório Git no diretório atual. Isso cria a estrutura necessária para o Git começar a rastrear mudanças.',
                 category: 'basics',
