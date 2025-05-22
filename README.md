@@ -1,4 +1,4 @@
-# GitHelp 🚀
+# GitHelp - Seu Assistente Inteligente de Comandos Git 🚀
 
 <div align="center">
 
